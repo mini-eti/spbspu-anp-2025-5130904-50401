@@ -2,6 +2,5 @@
 
 int main()
 {
-std::cout << "mansurov.artem\n";
-return 0;
+  std::cout << "mansurov.artem\n";
 }
