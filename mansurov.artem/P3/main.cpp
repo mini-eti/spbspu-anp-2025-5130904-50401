@@ -74,7 +74,7 @@ int main(int argc, char** argv)
     std::cerr << "Too much arguments\n";
     delete [] tempMatrix2;
     return 2;
-  } 
+  }
 
   int minsum = minSum(matrix, rows, cols);
   transformMatrix(matrix, rows, cols);
