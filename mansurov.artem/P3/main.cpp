@@ -5,7 +5,7 @@
   namespace mansurov
   {
     size_t min(size_t a, size_t b);
-    void transformMatrix(int * mtx, size_t m, size_t n);
+    void transformMatrix(int* mtx, size_t m, size_t n);
     size_t fillMtrx(std::istream& input, int* mtx, size_t rows, size_t cols);
     int minSum(const int* mtrx, size_t rows, size_t cols);
     void outputToFile(std::ofstream& output, const int* mtrx, size_t rows, size_t cols, int minsum);    
@@ -14,8 +14,8 @@
 
   int main(int argc, char** argv)
   {
-    if (argc < 4)
-    {
+    using namespace mansurov;
+    if (argc < 4) {
       std::cerr << "Not enough arguments\n";
       return 1;
     } else if (argc > 4) {
@@ -55,7 +55,7 @@
       {
         tempMatrix2 = new int [rows * cols];
       }
-      catch(const std::bad_alloc& e)
+      catch (const std::bad_alloc& e)
       {
         std::cerr << e.what() << '\n';
         return 2;
@@ -63,9 +63,9 @@
     }
 
     int* matrix = argv[1][0] == '1' ? tempMatrix1 : tempMatrix2;
-    size_t isInputOk = mansurov :: fillMtrx(input, matrix, rows, cols);
+    size_t isInputOk = fillMtrx(input, matrix, rows, cols);
 
-    if(isInputOk == 1){
+    if (isInputOk == 1){
       std::cerr << "input error";
       delete[] tempMatrix2;
       return 2;
@@ -77,9 +77,9 @@
       return 2;
     } 
 
-    int minsum = mansurov :: minSum(matrix, rows, cols);
-    mansurov :: transformMatrix(matrix, rows, cols);
-    mansurov :: outputToFile(output, matrix, rows, cols, minsum);
+    int minsum = minSum(matrix, rows, cols);
+    transformMatrix(matrix, rows, cols);
+    outputToFile(output, matrix, rows, cols, minsum);
 
     if (argv[1][0] == '2')
     {
@@ -88,22 +88,25 @@
   }
 
 
-  size_t mansurov :: min(size_t a, size_t b){
+  size_t mansurov :: min(size_t a, size_t b)
+  {
     return (a<=b) ? a: b;
   }
 
-  void mansurov :: outputToFile(std::ofstream& output, const int* mtrx, size_t rows, size_t cols, int minsum){
-    for(size_t i = 0; i < rows * cols; ++i){
+  void mansurov :: outputToFile(std::ofstream& output, const int* mtrx, size_t rows, size_t cols, int minsum)
+  {
+    for (size_t i = 0; i < rows * cols; ++i){
       output << mtrx[i] << " ";
     }
     output << minsum << "\n";
   }
   
-  size_t  mansurov :: fillMtrx(std::istream& input, int* mtx, size_t rows, size_t cols){
+  size_t  mansurov :: fillMtrx(std::istream& input, int* mtx, size_t rows, size_t cols)
+  {
     for (size_t i = 0; i < (rows * cols); ++i)
     {
       input >> mtx[i];
-      if(!input){
+      if (!input){
         return 1;
       }
     }
@@ -118,7 +121,7 @@
   
   void mansurov :: transformMatrix(int * mtx, size_t n, size_t m)
   {
-    if (m == 0 || n == 0){
+    if (m == 0 || n == 0) {
       mtx = mtx;
     }
     else{
@@ -136,7 +139,8 @@
   }
 
 
-  int mansurov :: minSum(const int* mtrx, size_t rows, size_t cols) {
+  int mansurov :: minSum(const int* mtrx, size_t rows, size_t cols) 
+  {
     if (rows == 0 || cols == 0){
       return 0;
     }
@@ -156,4 +160,3 @@
     }
     return minsum;
   }
-  
