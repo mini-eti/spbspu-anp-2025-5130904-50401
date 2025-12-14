@@ -7,8 +7,8 @@ namespace mansurov
   void transformMatrix(int* mtx, size_t m, size_t n);
   size_t fillMtrx(std::istream& input, int* mtx, size_t rows, size_t cols);
   int minSum(const int* mtrx, size_t rows, size_t cols);
-  void outputToFile(std::ofstream& output, const int* mtrx, size_t rows, size_t cols, int minsum);    
-} 
+  void outputToFile(std::ofstream& output, const int* mtrx, size_t rows, size_t cols, int minsum);
+}
 
 
 int main(int argc, char** argv)
@@ -141,7 +141,7 @@ void mansurov :: transformMatrix(int * mtx, size_t n, size_t m)
 }
 
 
-int mansurov :: minSum(const int* mtrx, size_t rows, size_t cols) 
+int mansurov :: minSum(const int* mtrx, size_t rows, size_t cols)
 {
   if (rows == 0 || cols == 0){
     return 0;
