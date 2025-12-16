@@ -38,7 +38,7 @@ int main(int argc, char** argv)
     std::cerr << "BAD input\n";
     return 2;
   }
-
+  
 
   if (rows == 0 || cols == 0)
   {
@@ -58,7 +58,7 @@ int main(int argc, char** argv)
   fillMtrx(input, matrix, rows, cols);
 
   if (!input){
-    std::cerr << "input error";
+    std::cerr << "input error\n";
     delete[] tempMatrix2;
     return 2;
   }
@@ -90,12 +90,6 @@ std::istream&  mansurov::fillMtrx(std::istream& input, int* mtx, size_t rows, si
     if (!input){
       return input;
     }
-  }
-  int last_try = 0;
-  input >> last_try;
-  if (input || !input.eof())
-  {
-    return input;
   }
   return input;
 }
