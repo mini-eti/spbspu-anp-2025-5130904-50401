@@ -90,7 +90,7 @@ std::istream&  mansurov::fillMtrx(std::istream& input, int* mtx, size_t rows, si
       return input;
     }
   }
-  int last_try = 0; 
+  int last_try = 0;
   input >> last_try;
   if (input || !input.eof())
   {
