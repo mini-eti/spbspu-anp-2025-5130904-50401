@@ -3,7 +3,7 @@
 
 namespace mansurov
 {
-  size_t min(size_t a, size_t b); 
+  size_t min(size_t a, size_t b);
   void transformMatrix(int* mtx, size_t m, size_t n);
   std::istream& fillMtrx(std::istream& input, int* mtx, size_t rows, size_t cols);
   int minSum(const int* mtrx, size_t rows, size_t cols);
