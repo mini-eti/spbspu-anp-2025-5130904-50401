@@ -38,7 +38,7 @@ int main(int argc, char** argv)
     std::cerr << "BAD input\n";
     return 2;
   }
-  
+
 
   if (rows == 0 || cols == 0)
   {
