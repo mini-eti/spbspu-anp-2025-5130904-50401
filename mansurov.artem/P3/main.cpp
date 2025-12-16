@@ -38,6 +38,7 @@ int main(int argc, char** argv)
     std::cerr << "BAD input\n";
     return 2;
   }
+  
 
   if (rows == 0 || cols == 0)
   {
@@ -56,7 +57,7 @@ int main(int argc, char** argv)
   int* matrix = argv[1][0] == '1' ? tempMatrix1 : tempMatrix2;
   fillMtrx(input, matrix, rows, cols);
 
-  if (!fillMtrx(input, matrix, rows, cols).fail()){
+  if (!input){
     std::cerr << "input error";
     delete[] tempMatrix2;
     return 2;
