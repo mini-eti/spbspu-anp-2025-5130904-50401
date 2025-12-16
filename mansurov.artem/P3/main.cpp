@@ -56,7 +56,7 @@ int main(int argc, char** argv)
   int* matrix = argv[1][0] == '1' ? tempMatrix1 : tempMatrix2;
   fillMtrx(input, matrix, rows, cols);
 
-  if (fillMtrx(input, matrix, rows, cols).fail()){
+  if (!fillMtrx(input, matrix, rows, cols).fail()){
     std::cerr << "input error";
     delete[] tempMatrix2;
     return 2;
